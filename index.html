@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国象棋</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>中国象棋</h1>
+        <div class="game-container">
+            <div class="chessboard" id="chessboard">
+                <!-- 棋盘将通过JavaScript生成 -->
+            </div>
+            <div class="sidebar">
+                <div class="game-info">
+                    <h3>游戏信息</h3>
+                    <p>当前回合: <span id="current-player">红方</span></p>
+                    <button id="suggest-move" class="btn">获取大师建议</button>
+                    <div id="suggestion-area" class="suggestion-area">
+                        <h4>大师建议:</h4>
+                        <p id="suggestion-text">等待你的回合...</p>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button id="new-game" class="btn">新游戏</button>
+                    <button id="undo-move" class="btn">悔棋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

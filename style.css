@@ -1,0 +1,209 @@
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0e6d2;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #8B4513;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 540px;
+    height: 600px;
+    background-color: #DEB887;
+    border: 3px solid #8B4513;
+    position: relative;
+}
+
+.chessboard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        /* 横线 */
+        linear-gradient(to bottom, transparent 9.5%, #000 9.5%, #000 10.5%, transparent 10.5%),
+        linear-gradient(to bottom, transparent 19.5%, #000 19.5%, #000 20.5%, transparent 20.5%),
+        linear-gradient(to bottom, transparent 29.5%, #000 29.5%, #000 30.5%, transparent 30.5%),
+        linear-gradient(to bottom, transparent 39.5%, #000 39.5%, #000 40.5%, transparent 40.5%),
+        linear-gradient(to bottom, transparent 49.5%, #000 49.5%, #000 50.5%, transparent 50.5%),
+        linear-gradient(to bottom, transparent 59.5%, #000 59.5%, #000 60.5%, transparent 60.5%),
+        linear-gradient(to bottom, transparent 69.5%, #000 69.5%, #000 70.5%, transparent 70.5%),
+        linear-gradient(to bottom, transparent 79.5%, #000 79.5%, #000 80.5%, transparent 80.5%),
+        linear-gradient(to bottom, transparent 89.5%, #000 89.5%, #000 90.5%, transparent 90.5%),
+        /* 竖线 */
+        linear-gradient(to right, transparent 10.5%, #000 10.5%, #000 11.5%, transparent 11.5%),
+        linear-gradient(to right, transparent 22.5%, #000 22.5%, #000 23.5%, transparent 23.5%),
+        linear-gradient(to right, transparent 33.5%, #000 33.5%, #000 34.5%, transparent 34.5%),
+        linear-gradient(to right, transparent 44.5%, #000 44.5%, #000 45.5%, transparent 45.5%),
+        linear-gradient(to right, transparent 55.5%, #000 55.5%, #000 56.5%, transparent 56.5%),
+        linear-gradient(to right, transparent 66.5%, #000 66.5%, #000 67.5%, transparent 67.5%),
+        linear-gradient(to right, transparent 77.5%, #000 77.5%, #000 78.5%, transparent 78.5%),
+        linear-gradient(to right, transparent 88.5%, #000 88.5%, #000 89.5%, transparent 89.5%);
+    background-size: 100% 100%;
+    pointer-events: none;
+}
+
+/* 河界 */
+.chessboard::after {
+    content: "楚河  汉界";
+    position: absolute;
+    top: 47.5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #8B4513;
+    background: rgba(222, 184, 135, 0.8);
+    z-index: 1;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.square.selected {
+    background-color: rgba(144, 238, 144, 0.5);
+}
+
+.square.possible-move {
+    position: relative;
+}
+
+.square.possible-move::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 128, 0, 0.5);
+    z-index: 2;
+}
+
+.sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.game-info h3, .game-info h4 {
+    color: #8B4513;
+    margin-top: 0;
+}
+
+.suggestion-area {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border-left: 4px solid #8B4513;
+}
+
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #A0522D;
+}
+
+#suggest-move {
+    background-color: #2E8B57;
+}
+
+#suggest-move:hover {
+    background-color: #3CB371;
+}
+
+.piece {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.red {
+    color: #DC143C;
+}
+
+.black {
+    color: #000;
+}
+
+@media (max-width: 900px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chessboard {
+        width: 90vw;
+        height: calc(90vw * 10 / 9);
+        max-width: 540px;
+        max-height: 600px;
+    }
+    
+    .sidebar {
+        width: 90%;
+        max-width: 540px;
+    }
+}

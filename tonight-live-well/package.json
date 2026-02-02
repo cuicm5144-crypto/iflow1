@@ -1,0 +1,27 @@
+{
+  "name": "tonight-live-well",
+  "version": "1.0.0",
+  "description": "反焦虑治愈系生活模拟器 - 今晚好好过",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "react-scripts start"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.1.1",
+    "react-router-dom": "^6.8.1",
+    "axios": "^1.3.4"
+  },
+  "keywords": ["wellness", "lifestyle", "calm", "meditation", "self-care"],
+  "author": "iFlow CLI",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+}

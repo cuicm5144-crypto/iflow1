@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.骂我" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#e94560</item>
+        <item name="colorPrimaryVariant">#c73850</item>
+        <item name="colorOnPrimary">#ffffff</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#4a90e2</item>
+        <item name="colorSecondaryVariant">#357abd</item>
+        <item name="colorOnSecondary">#ffffff</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">#1a1a2e</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/gradient_background</item>
+    </style>
+</resources>
